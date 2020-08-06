@@ -133,13 +133,15 @@
 .grid-container-personal {
   font-size: 2rem;
   display: grid;
-  grid-template: auto / auto auto auto auto auto auto auto auto;
+  grid-template-columns: repeat(8,1fr);
+  grid-auto-rows: minmax(100px,auto);
   grid-gap: 10px;
   background-color: #000000b4;
   padding: 10px;
   position: absolute;
   top: 15rem;
   left: 5rem;
+  visibility: hidden;
 }
 
 .grid-container-personal > div {
@@ -152,7 +154,8 @@
 .grid-container-overall {
   font-size: 2rem;
   display: grid;
-  grid-template: auto / auto auto auto auto auto auto auto auto;
+  grid-template-columns: repeat(8,1fr);
+  grid-auto-rows: minmax(100px,auto);
   grid-gap: 10px;
   background-color: #000000b4;
   padding: 10px;
@@ -169,9 +172,42 @@
   font-size: 30px;
 }
 
+.grid-container-admin {
+  font-size: 2rem;
+  display: grid;
+  grid-template-columns: repeat(8,1fr);
+  grid-auto-rows: minmax(100px,auto);
+  grid-gap: 10px;
+  background-color: #000000b4;
+  padding: 10px;
+  position: absolute;
+  top: 15rem;
+  left: 5rem;
+}
+
+.static:nth-child(1n) {
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.grid-container-admin > div {
+  background-color: rgba(255, 255, 255);
+  text-align: center;
+  padding: 10px;
+  font-size: 30px;
+}
+
+
+div.m{
+  /* position: absolute; */
+    top:5px;
+    left:5px;
+    /* font-size: 20px; */
+}
+
 .radio-container{
   font-size:30px;
   position: absolute;
   right:5rem;
   top:20rem
 }
+
