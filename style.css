@@ -141,7 +141,7 @@
   position: absolute;
   top: 15rem;
   left: 5rem;
-  visibility: hidden;
+  /* visibility: hidden; */
 }
 
 .grid-container-personal > div {
@@ -183,6 +183,7 @@
   position: absolute;
   top: 15rem;
   left: 5rem;
+  visibility: hidden;
 }
 
 .static:nth-child(1n) {
@@ -198,10 +199,13 @@
 
 
 div.m{
-  /* position: absolute; */
-    top:5px;
-    left:5px;
-    /* font-size: 20px; */
+  position: relative;
+
+}
+div.a{
+  position: absolute;
+  top:5px;
+  right:5px;
 }
 
 .radio-container{
@@ -211,3 +215,27 @@ div.m{
   top:20rem
 }
 
+/* 
+div.item1{
+  position: relative;
+} */
+
+.button{
+  /* position: absolute; */
+  border-radius: 100%;
+  background: none;
+  padding: 10px 10px;
+  font-size:30px;
+  cursor: pointer;
+  margin:10px;
+}
+
+.btnAccept{
+  background-color:#09ff00;
+  visibility: hidden;
+}
+
+.btnRemove{
+  background-position: center;
+  background-color:#ff0000;
+}
