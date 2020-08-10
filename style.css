@@ -149,6 +149,8 @@
   text-align: center;
   padding: 10px;
   font-size: 30px;
+  transition:0.8s;
+
 }
 
 .grid-container-overall {
@@ -220,22 +222,40 @@ div.item1{
   position: relative;
 } */
 
-.button{
-  /* position: absolute; */
+/* .button{
   border-radius: 100%;
   background: none;
   padding: 10px 10px;
   font-size:30px;
   cursor: pointer;
   margin:10px;
-}
+} */
+
+
 
 .btnAccept{
+  border-radius: 100%;
+  background: none;
+  padding: 10px 10px;
+  font-size:30px;
+  cursor: pointer;
+  margin:10px;
   background-color:#09ff00;
-  visibility: hidden;
+  display: none;
 }
 
 .btnRemove{
+  border-radius: 100%;
+  background: none;
+  padding: 10px 10px;
+  font-size:30px;
+  cursor: pointer;
+  margin:10px;
   background-position: center;
   background-color:#ff0000;
+  transition:0.8s;
+}
+
+div.item1:hover{
+  background-color: #ff0000;
 }
