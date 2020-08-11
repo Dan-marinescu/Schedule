@@ -28,7 +28,7 @@
                 <span class="center">e</span>
             </h1>
         </div>
-        <div class="grid-container-overall">
+        <div class="grid-container-overall" id="overall">
             <div class="dayNdate">Saturday</div>
             <div class="dayNdate">Friday</div>
             <div class="dayNdate">Thursday</div>  
@@ -63,7 +63,7 @@
             <div class="Time">ערב</div>
         </div>
 
-        <div class="grid-container-admin">
+        <div class="grid-container-admin" id="admin">
             <div class="static">Saturday</div>
             <div class="static">Friday</div>
             <div class="static">Thursday</div>  
@@ -74,15 +74,18 @@
             <div class="static"></div>
             <div class="m">
                 <div class= "a">
-                    <p><button type="button"> <img src="images/up.jpg"></button></p>
-                    <p><button type="button"> <img src="images/down.jpg"></button></p>
-                    <div id="result">0</div>           
+                    <p><button type="button" onclick="shiftsChange('up','resM7')"> <img src="images/up.jpg"></button></p>
+                    <div id="resM7">0</div>           
+                    <p><button type="button" onclick="shiftsChange('down','resM7')"> <img src="images/down.jpg"></button></p>
                 </div>
             </div>
             <div class="m">
-                    <p><button type="button">up</button></p>
-                    <p><button type="button">down</button></p>
-                    <div id="result">0</div>    
+                <div class= "a">
+                    <p><button type="button" onclick="shiftsChange('up','resM6')"> <img src="images/up.jpg"></button></p>
+                    <div id="resM6">0</div>    
+                    <p><button type="button" onclick="shiftsChange('down','resM6')"> <img src="images/down.jpg"></button></p>
+                </div>
+
             </div>
             <div class="m"></div>  
             <div class="m"></div>
@@ -108,7 +111,7 @@
             <div class="static">ערב</div>
         </div>
 
-        <div class="grid-container-personal">
+        <div class="grid-container-personal" id="personal">
             <div class="dayNdate">Saturday</div>
             <div class="dayNdate">Friday</div>
             <div class="dayNdate">Thursday</div>  
@@ -148,16 +151,18 @@
         </div>
 
         <div class="radio-container">
-            <input type="radio" id="overall" name="schedule"  value="overall" checked>
+            <input type="radio" id="overall" name="schedule" onchange="modeType('overall')" value="overall" checked>
             <label for="overall">overall schedule</label><br>
-            <input type="radio" id="my" name="schedule" value="my">
+            <input type="radio" id="my" name="schedule" onchange="modeType('my')"  value="my">
             <label for="my">my schedule</label><br>
+            <input type="radio" id="admin" name="schedule" onchange="modeType('admin')"  value="admin">
+            <label for="admin">admin</label><br>
         </div>
 
 
     </header>
 
-
+<script src="./script.js"></script>
 </body>
 
 </html>

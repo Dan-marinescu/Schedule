@@ -141,7 +141,8 @@
   position: absolute;
   top: 15rem;
   left: 5rem;
-  /* visibility: hidden; */
+  /* display: none;  */
+
 }
 
 .grid-container-personal > div {
@@ -164,7 +165,8 @@
   position: absolute;
   top: 15rem;
   left: 5rem;
-  visibility: hidden;
+  display: none; 
+
 }
 
 .grid-container-overall > div {
@@ -185,7 +187,7 @@
   position: absolute;
   top: 15rem;
   left: 5rem;
-  visibility: hidden;
+  display: none;
 }
 
 .static:nth-child(1n) {
@@ -202,7 +204,6 @@
 
 div.m{
   position: relative;
-
 }
 div.a{
   position: absolute;
@@ -241,7 +242,8 @@ div.item1{
   cursor: pointer;
   margin:10px;
   background-color:#09ff00;
-  display: none;
+  transition:0.8s;
+
 }
 
 .btnRemove{
@@ -254,8 +256,12 @@ div.item1{
   background-position: center;
   background-color:#ff0000;
   transition:0.8s;
+  display: none;
+
 }
 
 div.item1:hover{
   background-color: #ff0000;
+  background-color:#09ff00;
+
 }
