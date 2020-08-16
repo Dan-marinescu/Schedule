@@ -1,44 +1,66 @@
-function shiftsChange(action,res){
-    var x = parseInt(document.getElementById(res).innerHTML); 
-    if(action == "up"){
+
+const generateSchedaule = () => {
+    const m = []
+    const wrapper = document.getElementById('overall')
+    for (let i = 0; i < 3; i++) {
+
+        for (let j = 0; j < 7; j++) {
+            const div = document.createElement('div');
+            div.innerHTML = "Yeah"
+            wrapper.appendChild(div)
+            m.push(div)
+        }
+        const time = document.createElement('div')
+        time.innerHTML = 'morning'
+        wrapper.appendChild(time)
+    }
+    return m
+}
+
+
+
+
+
+function shiftsChange(action, res) {
+    var x = parseInt(document.getElementById(res).innerHTML);
+    if (action == "up") {
         x += 1;
-    }else{
-        if(x > 0){
+    } else {
+        if (x > 0) {
             x -= 1;
         }
     }
-    console.log(x);
-    console.log(res);
+
     document.getElementById(res).innerHTML = x;
 }
 
-function modeType(type){
-    // document.querySelector("personal").setAttribute("style","display: none;");
-    // document.querySelector("personal").setAttribute("style","display: none;");
+const modes = ['personal', "overall", "admin"]
 
-    // document.getElementsByClassName("grid-container-personal").style = "none";
-    // document.getElementsByClassName("grid-container-overall").style = "none";
+function modeType(type) {
+    document.getElementById(type).style.display = "grid";
 
-    // document.getElementsByClassName("grid-container-admin").style = "none";
-
-    document.getElementById("personal").style.display = "none";
-    document.getElementById("admin").style.display = "none";
-    document.getElementById("overall").style.display = "none";
-    
-    if(type == "overall"){
-        // document.getElementsByClassName("grid-container-overall").style = "block";
-
-        document.getElementById("overall").style.display = "block";
-    }else if(type == "my"){
-        // document.getElementsByClassName("grid-container-personal").style = "block";
-
-        document.getElementById("personal").style.display = "block";
-    }else{
-        // document.getElementsByClassName("grid-container-admin").style = "block";
-
-        document.getElementById("admin").style.display = "block";
-    }
+    modes.filter(m => m !== type).forEach(m => {
+        document.getElementById(m).style.display = "none";
+    })
+}
 
 
+function clickAccept(className) {
+    console.log(className)
+    var x = document.querySelectorAll(`.${className} .btnAccept`);
+    console.log(x);
+    // document.getElementsByClassName(className)[0].style.background = 'red';
+    document.querySelectorAll(`.${className}`)[0].style.background = 'red';
+    document.querySelectorAll(`.${className} .btnAccept`)[0].style.display = "none";
+    document.querySelectorAll(`.${className} .btnRemove`)[0].style.display = "block";
+}
+
+function clickRemove(className) {
+    console.log(className)
+    // document.getElementsByClassName(className)[0].style.background = 'green';
+    document.querySelectorAll(`.${className} `)[0].style.background = '#09ff00';
+
+    document.querySelectorAll(`.${className} .btnRemove`)[0].style.display = "none";
+    document.querySelectorAll(`.${className} .btnAccept`)[0].style.display = "block";
 
 }

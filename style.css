@@ -12,6 +12,11 @@
   html {
     font-size: 62.5%;
   }
+
+  body{
+    background: linear-gradient(rgba(18,113,255,0.1),rgba(18,113,255,0.1)),url(images/gy.jpg) center no-repeat;
+    background-size: cover;
+  }
   
   :root {
     --primary-color: #2b81e4;
@@ -27,6 +32,7 @@
     justify-content: center;
     align-items: center;
   }
+
   
   .container {
     background-color: var(--secondary-color);
@@ -36,11 +42,10 @@
   }
 
   .header{
+    padding: 25px;
     width: 100%;
-    height: calc(100vh - 7rem);
-    background: linear-gradient(rgba(18,113,255,0.1),rgba(18,113,255,0.1)),url(images/gy.jpg) center no-repeat;
-    background-size: cover;
-    position: relative;
+    display: flex;
+    justify-content: space-between;
   } 
 
 .header-text{
@@ -48,20 +53,18 @@
     text-transform: uppercase;
     letter-spacing: 0.1rem;
     text-shadow: 0 0.3rem 0.5rem var(--grey-color);
-    position: absolute;
     top: 4rem;
     right: 4rem;
 }
 
 .heading {
+  display:flex;
+  justify-content: space-between;
   font-size: 3rem;
   color:var(--white-color);
 }
 
 .logo {
-  position: absolute;
-  top: 4rem;
-  left: 4rem;
   letter-spacing: 0.5rem;
 }
 
@@ -128,9 +131,20 @@
   }
 }
 
+.nickname{
+  position: relative;
+  background-color: brown;
+  font-size: 2rem;
+}
 
+
+.grids{
+  display:flex;
+  padding-top: 15px;
+}
 
 .grid-container-personal {
+  width: 80%;
   font-size: 2rem;
   display: grid;
   grid-template-columns: repeat(8,1fr);
@@ -138,11 +152,11 @@
   grid-gap: 10px;
   background-color: #000000b4;
   padding: 10px;
-  position: absolute;
-  top: 15rem;
-  left: 5rem;
+  margin-left: 10px;
+  /* position: absolute; */
+  /* top: 15rem;
+  left: 5rem; */
   /* display: none;  */
-
 }
 
 .grid-container-personal > div {
@@ -162,7 +176,7 @@
   grid-gap: 10px;
   background-color: #000000b4;
   padding: 10px;
-  position: absolute;
+  /* position: absolute; */
   top: 15rem;
   left: 5rem;
   display: none; 
@@ -184,7 +198,7 @@
   grid-gap: 10px;
   background-color: #000000b4;
   padding: 10px;
-  position: absolute;
+  /* position: absolute; */
   top: 15rem;
   left: 5rem;
   display: none;
@@ -203,21 +217,28 @@
 
 
 div.m{
-  position: relative;
 }
 div.a{
-  position: absolute;
   top:5px;
   right:5px;
 }
 
 .radio-container{
-  font-size:30px;
-  position: absolute;
-  right:5rem;
-  top:20rem
+  font-size:20px;
+  display: flex;
+  margin-left: 10px;
+  flex-direction: column;
 }
 
+.a{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.a span{
+  margin-left: 50%;
+}
 /* 
 div.item1{
   position: relative;
@@ -259,7 +280,10 @@ div.item1{
   display: none;
 
 }
+/* .item{
+  background-color: #ff0000;
 
+} */
 div.item1:hover{
   background-color: #ff0000;
   background-color:#09ff00;

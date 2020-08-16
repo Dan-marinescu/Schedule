@@ -12,11 +12,7 @@
 
 <body>
     <header class="header center">
-        <div class="container">
-            <div class="header-text">
-                <h1 class="heading">Weekly schedule</h1>
-            </div>
-        </div>
+
         <div class="logo">
             <h1>
                 <span class="center">s</span>
@@ -28,10 +24,17 @@
                 <span class="center">e</span>
             </h1>
         </div>
+        <div class="header-text">
+            <h1 class="heading">Weekly schedule</h1>
+        </div>
+    </header>
+
+
+    <div class="grids">
         <div class="grid-container-overall" id="overall">
             <div class="dayNdate">Saturday</div>
             <div class="dayNdate">Friday</div>
-            <div class="dayNdate">Thursday</div>  
+            <div class="dayNdate">Thursday</div>
             <div class="dayNdate">Wednesday</div>
             <div class="dayNdate">Tuesday</div>
             <div class="dayNdate">Monday</div>
@@ -39,7 +42,7 @@
             <div class="Time"></div>
             <div class="item1">1</div>
             <div class="item2">2</div>
-            <div class="item3">3</div>  
+            <div class="item77">3</div>
             <div class="item4">4</div>
             <div class="item5">5</div>
             <div class="item6">6</div>
@@ -47,7 +50,7 @@
             <div class="Time">בוקר</div>
             <div class="item1">11</div>
             <div class="item2">22</div>
-            <div class="item3">33</div>  
+            <div class="item387">33</div>
             <div class="item4">44</div>
             <div class="item5">55</div>
             <div class="item6">66</div>
@@ -55,7 +58,7 @@
             <div class="Time">צהריים</div>
             <div class="item1">111</div>
             <div class="item2">222</div>
-            <div class="item3">333</div>  
+            <div class="item37">333</div>
             <div class="item4">444</div>
             <div class="item5">555</div>
             <div class="item6">666</div>
@@ -66,28 +69,40 @@
         <div class="grid-container-admin" id="admin">
             <div class="static">Saturday</div>
             <div class="static">Friday</div>
-            <div class="static">Thursday</div>  
+            <div class="static">Thursday</div>
             <div class="static">Wednesday</div>
             <div class="static">Tuesday</div>
             <div class="static">Monday</div>
             <div class="static">Sunday</div>
             <div class="static"></div>
             <div class="m">
-                <div class= "a">
-                    <p><button type="button" onclick="shiftsChange('up','resM7')"> <img src="images/up.jpg"></button></p>
-                    <div id="resM7">0</div>           
-                    <p><button type="button" onclick="shiftsChange('down','resM7')"> <img src="images/down.jpg"></button></p>
+                <div class="a">
+                    <span>
+                        <div id="resM7">0</div>
+                    </span>
+                    <div>
+                        <p><button type="button" onclick="shiftsChange('up','resM7')"> <img
+                                    src="images/up.jpg"></button>
+                        </p>
+                        <p><button type="button" onclick="shiftsChange('down','resM7')"> <img
+                                    src="images/down.jpg"></button>
+                        </p>
+                    </div>
+
                 </div>
             </div>
             <div class="m">
-                <div class= "a">
-                    <p><button type="button" onclick="shiftsChange('up','resM6')"> <img src="images/up.jpg"></button></p>
-                    <div id="resM6">0</div>    
-                    <p><button type="button" onclick="shiftsChange('down','resM6')"> <img src="images/down.jpg"></button></p>
+                <div class="a">
+                    <p><button type="button" onclick="shiftsChange('up','resM6')"> <img src="images/up.jpg"></button>
+                    </p>
+                    <div id="resM6">0</div>
+                    <p><button type="button" onclick="shiftsChange('down','resM6')"> <img
+                                src="images/down.jpg"></button>
+                    </p>
                 </div>
 
             </div>
-            <div class="m"></div>  
+            <div class="m"></div>
             <div class="m"></div>
             <div class="m"></div>
             <div class="m"></div>
@@ -95,7 +110,7 @@
             <div class="static">בוקר</div>
             <div class="a1"></div>
             <div class="a2"></div>
-            <div class="a3"></div>  
+            <div class="a3"></div>
             <div class="a4"></div>
             <div class="a5"></div>
             <div class="a6"></div>
@@ -103,7 +118,7 @@
             <div class="static">צהריים</div>
             <div class="n1"></div>
             <div class="n2"></div>
-            <div class="n3"></div>  
+            <div class="n3"></div>
             <div class="n4"></div>
             <div class="n5"></div>
             <div class="n6"></div>
@@ -114,19 +129,21 @@
         <div class="grid-container-personal" id="personal">
             <div class="dayNdate">Saturday</div>
             <div class="dayNdate">Friday</div>
-            <div class="dayNdate">Thursday</div>  
+            <div class="dayNdate">Thursday</div>
             <div class="dayNdate">Wednesday</div>
             <div class="dayNdate">Tuesday</div>
             <div class="dayNdate">Monday</div>
             <div class="dayNdate">Sunday</div>
             <div class="Time"></div>
-            <div class="item1">
-                    <!-- <div>a</div> -->
-                    <button class ="btnAccept">V</button>
-                    <button class ="btnRemove"> X </button>
+            <div class="ite1">
+                <button class="btnAccept" onclick="clickAccept('ite1')">V</button>
+                <button class="btnRemove" onclick="clickRemove('ite1')"> X </button>
             </div>
-            <div class="item2"></div>
-            <div class="item3"></div>  
+            <div class="ite2">
+                <button class="btnAccept" onclick="clickAccept('ite2')">V</button>
+                <button class="btnRemove" onclick="clickRemove('ite2')"> X </button>
+            </div>
+            <div class="item3"></div>
             <div class="item4"></div>
             <div class="item5"></div>
             <div class="item6"></div>
@@ -134,7 +151,7 @@
             <div class="Time">בוקר</div>
             <div class="item1"></div>
             <div class="item2"></div>
-            <div class="item3"></div>  
+            <div class="item3"></div>
             <div class="item4"></div>
             <div class="item5"></div>
             <div class="item6"></div>
@@ -142,7 +159,7 @@
             <div class="Time">צהריים</div>
             <div class="item1"></div>
             <div class="item2"></div>
-            <div class="item3"></div>  
+            <div class="item3"></div>
             <div class="item4"></div>
             <div class="item5"></div>
             <div class="item6"></div>
@@ -150,19 +167,28 @@
             <div class="Time">ערב</div>
         </div>
 
+
         <div class="radio-container">
-            <input type="radio" id="overall" name="schedule" onchange="modeType('overall')" value="overall" checked>
-            <label for="overall">overall schedule</label><br>
-            <input type="radio" id="my" name="schedule" onchange="modeType('my')"  value="my">
-            <label for="my">my schedule</label><br>
-            <input type="radio" id="admin" name="schedule" onchange="modeType('admin')"  value="admin">
-            <label for="admin">admin</label><br>
+            <div>
+                <input type="radio" id="overall" name="schedule" onchange="modeType('overall')" value="overall" checked>
+                <label for="overall">overall schedule</label><br>
+            </div>
+
+            <div>
+                <input type="radio" id="my" name="schedule" onchange="modeType('personal')" value="my">
+                <label for="my">my schedule</label><br>
+            </div>
+            <div>
+                <input type="radio" id="admin" name="schedule" onchange="modeType('admin')" value="admin">
+                <label for="admin">admin</label><br>
+            </div>
         </div>
 
+    </div>
 
-    </header>
 
-<script src="./script.js"></script>
+
+    <script src="./script.js"></script>
 </body>
 
 </html>
