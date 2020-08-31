@@ -14,7 +14,7 @@
   }
 
   body{
-    background: linear-gradient(rgba(18,113,255,0.1),rgba(18,113,255,0.1)),url(images/y.jpg) center no-repeat;
+    background: linear-gradient(rgba(18,113,255,0.1),rgba(18,113,255,0.1));
     background-size: cover;
   }
   
@@ -23,7 +23,7 @@
     --secondary-color: #eee;
     --white-color: #fff;
     --grey-color: #555;
-    --light-grey-color: #777;
+    --light-grey-color: rgb(180, 180, 180);
     --cyan-color: #00ffff
   }
   
@@ -34,12 +34,13 @@
   }
 
   
-  .container {
+  /* .container {
     background-color: var(--secondary-color);
     margin: 3.5rem;
     box-shadow: 0 1rem 3rem var(--grey-color);
     overflow: hidden;
-  }
+    display: inline;
+  } */
 
   .header{
     padding: 25px;
@@ -130,21 +131,30 @@
     transform: translateY(0);
   }
 }
+#fname{
+  background-color: #09ff00;
+  margin:25px;
+  /* margin-top: 25px; */
+}
 
-.nickname{
-  position: relative;
-  background-color: brown;
-  font-size: 2rem;
+.input-class{
+  width: 10%;
+}
+
+.container{
+  display:flex;
+  padding-top: 15px;
+  text-align: center;
 }
 
 
 .grids{
-  display:flex;
-  padding-top: 15px;
+  margin-left: 20px;
+  width: 70%;
+
 }
 
 .grid-container-personal {
-  width: 80%;
   font-size: 2rem;
   display: grid;
   grid-template-columns: repeat(8,1fr);
@@ -153,14 +163,13 @@
   background-color: #000000b4;
   padding: 10px;
   margin-left: 10px;
-  /* position: absolute; */
-  /* top: 15rem;
-  left: 5rem; */
-  /* display: none;  */
+  margin-top: 30px;
+  margin-left: 30px;
+  display: none; 
 }
 
 .grid-container-personal > div {
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(255, 255, 255);
   text-align: center;
   padding: 10px;
   font-size: 30px;
@@ -176,21 +185,21 @@
   grid-gap: 10px;
   background-color: #000000b4;
   padding: 10px;
-  /* position: absolute; */
-  top: 15rem;
-  left: 5rem;
-  display: none; 
+  margin-top: 30px;
+  margin-left: 30px;
+  /* display: none;  */
 
 }
 
 .grid-container-overall > div {
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(180, 180, 180);
   text-align: center;
   padding: 10px;
   font-size: 30px;
 }
 
 .grid-container-admin {
+
   font-size: 2rem;
   display: grid;
   grid-template-columns: repeat(8,1fr);
@@ -199,8 +208,10 @@
   background-color: #000000b4;
   padding: 10px;
   /* position: absolute; */
-  top: 15rem;
-  left: 5rem;
+  /* top: 15rem;
+  left: 5rem; */
+  margin-top: 30px;
+  margin-left: 30px;
   display: none;
 }
 
@@ -216,21 +227,30 @@
 }
 
 
-
 .radio-container{
+  width: 20%;
+  height: 50%;
   font-size:20px;
   display: flex;
+  margin-top:40px;
   margin-left: 10px;
   flex-direction: column;
+  text-align: left;
 }
 
-.m{
+.adminClass{
   display: flex;
   align-items: center;
   justify-content: space-between;
+  /* background-image: url(images/up.jpg); */
+  background-repeat:no-repeat;
+  background-size: 100%;
+  width: 20px;
+  height: 20px;
+  margin:5% 5% 5% 80%;
 }
 
-.m span{
+.adminClass span{
   margin-left: 50%;
 }
 /* 
@@ -258,8 +278,6 @@ div.item1{
   margin:20px;
   background-color:#42f73bdc;
   transition:0.8s;
-  
-
 }
 
 .btnRemove{
@@ -274,22 +292,32 @@ div.item1{
   transition:0.8s;
 
 }
+
+.btnRemove:before{
+  content: 'X';
+
+}
+
+.btnAccept:before{
+  content: 'V';
+
+}
+
 /* .item{
   background-color: #ff0000;
 
 } */
 
 
-div.ite1:hover{
+div.accept:hover{
   background-color:#09ff00;
-  transition: 0.8s;
+  transition: 0.5s;
 
 }
 
-div.ite2:hover{
+div.remove:hover{
   background-color: #ff0000;
-  transition: 0.8s;
-
+  transition: 0.5s;
 }
 
 
