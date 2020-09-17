@@ -51,19 +51,21 @@
 
 .header-text{
     text-align:center ;
-    text-transform: uppercase;
-    letter-spacing: 0.1rem;
+    /* letter-spacing: 0.1rem; */
     text-shadow: 0 0.3rem 0.5rem var(--grey-color);
-    top: 4rem;
-    right: 4rem;
+    /* top: 4rem; */
+    /* right: 4rem; */
+    display:flex;
+    justify-content: space-between;
+    font-size: 2rem;
+    color:var(--white-color);
 }
 
-.heading {
-  display:flex;
-  justify-content: space-between;
-  font-size: 3rem;
-  color:var(--white-color);
+#username{
+  margin: 0 20px 0 0;
+
 }
+
 
 .logo {
   letter-spacing: 0.5rem;
@@ -275,9 +277,10 @@ div.item1{
   padding: 10px 10px;
   font-size:30px;
   cursor: pointer;
-  margin:20px;
+  margin:auto;
   background-color:#42f73bdc;
   transition:0.8s;
+  
 }
 
 .btnRemove{
@@ -286,14 +289,16 @@ div.item1{
   padding: 10px 10px;
   font-size:30px;
   cursor: pointer;
-  margin:20px;
+  margin:auto;
   background-position: center;
   background-color:#ff0000b0;
   transition:0.8s;
 
+
 }
 
 .btnRemove:before{
+
   content: 'X';
 
 }

@@ -1,58 +1,58 @@
-const days = ['Saturday','Friday','Thursday','Wednesday','Tuesday','Monday','Sunday','']
-const shift = ['Morning','Afternoon','Night']
+const days = ['Saturday','Friday','Thursday','Wednesday','Tuesday','Monday','Sunday',''];
+const shift = ['Morning','Afternoon','Night'];
 
 const generateOverallSchedaule = () => {
-    const m = []
-    const wrapper = document.getElementById('overall')
+    const m = [];
+    const wrapper = document.getElementById('overall');
     for(let i = 0 ; i<8 ; i++){
         const div = document.createElement('div');
-        div.innerHTML = days[i]
-        wrapper.appendChild(div)
+        div.innerHTML = days[i];
+        wrapper.appendChild(div);
     }
     for (let i = 0; i < 3; i++) {
         for (let j = 0; j < 7; j++) {
             const div = document.createElement('div');
             div.className = 'pers';
-            div.innerHTML = ''
-            wrapper.appendChild(div)
-            m.push(div)
+            div.innerHTML = '';
+            wrapper.appendChild(div);
+            m.push(div);
         }
-        const time = document.createElement('div')
-        time.innerHTML = shift[i]
-        wrapper.appendChild(time)
+        const time = document.createElement('div');
+        time.innerHTML = shift[i];
+        wrapper.appendChild(time);
     }
-    return m
+    return m;
 }
 
 const generatePersonalSchedaule = () => {
-    const m = []
-    const wrapper = document.getElementById('personal')
+    const m = [];
+    const wrapper = document.getElementById('personal');
     var counter = 0;
     for(let i = 0 ; i<8 ; i++){
         const div = document.createElement('div');
         div.style.backgroundColor = 'rgb(180,180,180)'
-        div.innerHTML = days[i]
-        wrapper.appendChild(div)
+        div.innerHTML = days[i];
+        wrapper.appendChild(div);
     }
     for (let i = 0; i < 3; i++) {
         for (let j = 0; j < 7; j++) {
             const div = createDiv(counter);
-            wrapper.appendChild(div)
-            m.push(div)
+            wrapper.appendChild(div);
+            m.push(div);
             // removeShiftOption(counter);
         }
-        const time = document.createElement('div')
-        time.style.backgroundColor = 'rgb(180,180,180)'
-        time.innerHTML = shift[i]
-        wrapper.appendChild(time)
+        const time = document.createElement('div');
+        time.style.backgroundColor = 'rgb(180,180,180)';
+        time.innerHTML = shift[i];
+        wrapper.appendChild(time);
     }
-    return m
+    return m;
 }
 
 function createDiv(val){
     const div = document.createElement('div');
     const btn = document.createElement('button');
-    btn.classList.add("btnRemove","ite1");
+    btn.classList.add("btnRemove");
     btn.value = val;
     btn.addEventListener("click",function (){
         if(div.className =='accept'){
@@ -74,9 +74,9 @@ function createDiv(val){
 
 
 const generateAdminSchedaule = () => {
-    const m = []
-    const wrapper = document.getElementById('admin')
-    var counter = 0
+    const m = [];
+    const wrapper = document.getElementById('admin');
+    var counter = 0;
     for(let i = 0 ; i<8 ; i++){
         const div = document.createElement('div');
         div.style.backgroundColor = 'rgb(180,180,180)';
@@ -94,9 +94,9 @@ const generateAdminSchedaule = () => {
             btndown.value = counter;
             btndown.style.background ="url(images/down.jpg)"; 
             btnup.style.background ="url(images/up.jpg)"; 
-            div.innerHTML = '<span> <div id="'+counter+'">0</div> </span>' 
-            div.appendChild(btnup)
-            div.appendChild(btndown)
+            div.innerHTML = '<span> <div id="'+counter+'">0</div> </span>' ;
+            div.appendChild(btnup);
+            div.appendChild(btndown);
             removeShiftOption(counter);
             btnup.addEventListener("click",function(){
                 var x = parseInt(document.getElementById(this.value).innerHTML);
@@ -116,17 +116,17 @@ const generateAdminSchedaule = () => {
                 }
                 document.getElementById(this.value).innerHTML = x;
             });
-            wrapper.appendChild(div)
-            m.push(div)
-            counter++
+            wrapper.appendChild(div);
+            m.push(div);
+            counter++;
         }
-        const time = document.createElement('div')
-        time.style.backgroundColor = 'rgb(180,180,180)'
+        const time = document.createElement('div');
+        time.style.backgroundColor = 'rgb(180,180,180)';
 
-        time.innerHTML = shift[i]
-        wrapper.appendChild(time)
+        time.innerHTML = shift[i];
+        wrapper.appendChild(time);
     }
-    return m
+    return m;
 }
 const personalArray = generatePersonalSchedaule();
 const overallArray = generateOverallSchedaule();
@@ -166,10 +166,10 @@ function addShiftOption(num){
 
 
 
-var fName = document.getElementById("fname");
-fName.addEventListener("change",function() {
-    console.log(this.value);
-});
+// var fName = document.getElementById("fname");
+// fName.addEventListener("change",function() {
+//     console.log(this.value);
+// });
 
 const modes = ['personal', "overall", "admin"]
 
