@@ -12,8 +12,9 @@ const generateOverallSchedaule = () => {
     for (let i = 0; i < 3; i++) {
         for (let j = 0; j < 7; j++) {
             const div = document.createElement('div');
-            div.className = 'pers';
             div.innerHTML = '';
+            div.id = "usernames";
+            // div.classList.add('test');
             wrapper.appendChild(div);
             m.push(div);
         }
@@ -39,7 +40,7 @@ const generatePersonalSchedaule = () => {
             const div = createDiv(counter);
             wrapper.appendChild(div);
             m.push(div);
-            // removeShiftOption(counter);
+            counter++;
         }
         const time = document.createElement('div');
         time.style.backgroundColor = 'rgb(180,180,180)';
@@ -52,21 +53,26 @@ const generatePersonalSchedaule = () => {
 function createDiv(val){
     const div = document.createElement('div');
     const btn = document.createElement('button');
-    btn.classList.add("btnRemove");
+    btn.classList.add("btnAccept");
+    div.className = 'accept';
+
     btn.value = val;
     btn.addEventListener("click",function (){
         if(div.className =='accept'){
             this.classList.remove("btnAccept","accept");
             this.classList.add("btnRemove","remove");
             div.className = 'remove';
+            addToArray(val);
+            addOrRemoveOverall(val);
 
         }else{
             this.classList.remove("btnRemove","remove");
             this.classList.add("btnAccept","accept");
             div.className = 'accept';
+            removeFromArray(val);
+            addOrRemoveOverall(val);
         }
     });
-    div.className = 'remove';
     div.appendChild(btn);
     return div;
 }
@@ -112,6 +118,8 @@ const generateAdminSchedaule = () => {
                     if(x==0){
                         removeShiftOption(this.value);
                         overallArray[this.value].style.backgroundColor ='rgb(180,180,180)';
+                        arr[this.value] = [];
+                        addOrRemoveOverall(this.value);
                     }
                 }
                 document.getElementById(this.value).innerHTML = x;
@@ -128,16 +136,37 @@ const generateAdminSchedaule = () => {
     }
     return m;
 }
+
+var username = document.getElementById("username").innerHTML;
+var arr = new Array(21);
+for(var i = 0 ;i<arr.length;i++){
+    arr[i] = new Array();
+}
+
 const personalArray = generatePersonalSchedaule();
 const overallArray = generateOverallSchedaule();
 const adminArray = generateAdminSchedaule();
 
-showArray(personalArray);
-function showArray(x){
-    for(var i=0;i<x.length;i++){
-        console.log(x[i]);
-    }
+
+function addOrRemoveOverall(val){
+    overallArray[val].innerHTML = '';
+    for(var i = 0 ; i < arr[val].length;i++)
+        overallArray[val].innerHTML += arr[val][i];
+        
 }
+
+
+
+function addToArray(val){
+    if(arr[val].indexOf(username) === -1)
+        arr[val].push(username);
+}
+
+function removeFromArray(val){
+    if(arr[val].indexOf(username) !== -1)
+        arr[val] = arr[val].filter(item => item !== username);    
+}
+
 
 
 
@@ -150,26 +179,18 @@ function removeShiftOption(num){
     }
     personalArray[num].style.backgroundColor ='rgb(180,180,180)';
 }
+
 function addShiftOption(num){
     personalArray[num].className ='';
     personalArray[num].style.backgroundColor ='';
 
-    personalArray[num].classList.add('remove');
+    personalArray[num].classList.add('accept');
     if(typeof personalArray[num].getElementsByClassName('btnAccept')[0]==="undefined")
          personalArray[num].getElementsByClassName('btnRemove')[0].style.display ='block'; 
     else{
         personalArray[num].getElementsByClassName('btnAccept')[0].style.display ='block'; 
     }
-    // else
-    
 }
-
-
-
-// var fName = document.getElementById("fname");
-// fName.addEventListener("change",function() {
-//     console.log(this.value);
-// });
 
 const modes = ['personal', "overall", "admin"]
 
@@ -179,48 +200,5 @@ function modeType(type) {
         document.getElementById(m).style.display = "none";
     })
 }
-
-// function clickAccept(btnObj) {
-//     console.log(btnObj.className)
-//     console.log(btnObj.value)
-//     console.log(btnObj.parentElement)
-//     btnObj.style.display = "none";
-//     btnObj.parentElement.querySelectorAll('.btnRemove')[0].style.display = "block";
-//     btnObj.parentElement.className = 'ite2';
-
-// }
-
-// function clickRemove(btnObj) {
-//     console.log(btnObj.value)
-//     console.log(btnObj.className)
-//     btnObj.style.display = "none";
-//     btnObj.parentElement.querySelectorAll('.btnAccept')[0].style.display = "block";
-//     btnObj.parentElement.className = 'ite1';
-
-//     // document.getElementsByClassName(className)[0].style.background = 'green';
-//     // btnObj.style.background = '#09ff00';
-//     // btnObj.style.display = "block";
-// }
-
-// function clickAccept(className) {
-//     console.log(className)
-//     var x = document.querySelectorAll(`.${className} .btnAccept`);
-//     console.log(x);
-//     // document.getElementsByClassName(className)[0].style.background = 'red';
-//     document.querySelectorAll(`.${className}`)[0].style.background = 'red';
-
-//     document.querySelectorAll(`.${className} .btnAccept`)[0].style.display = "none";
-//     document.querySelectorAll(`.${className} .btnRemove`)[0].style.display = "block";
-// }
-
-// function clickRemove(className) {
-//     console.log(className)
-//     // document.getElementsByClassName(className)[0].style.background = 'green';
-//     document.querySelectorAll(`.${className} `)[0].style.background = '#09ff00';
-
-//     document.querySelectorAll(`.${className} .btnRemove`)[0].style.display = "none";
-//     document.querySelectorAll(`.${className} .btnAccept`)[0].style.display = "block";
-
-// }
 
 
